@@ -1220,7 +1220,7 @@ void MapDrawer::BlitItem(int& draw_x, int& draw_y, const Position& pos, Item* it
 			uint8_t byteB = lightColor.Blue();
 			uint8_t byteA = 255;
 
-			int startOffset = std::max<int>(16, 32 - light.intensity);
+			int startOffset = std::max<int>(16, 64 - light.intensity);
 			int sqSize = TileSize - startOffset;
 			glDisable(GL_TEXTURE_2D);
 			glBlitSquare(draw_x + startOffset - 2, draw_y + startOffset - 2, 0, 0, 0, byteA, sqSize + 2);
