@@ -1168,9 +1168,9 @@ Brush* FindDialogListBox::GetSelectedBrush()
 void FindDialogListBox::OnDrawItem(wxDC& dc, const wxRect& rect, size_t n) const
 {
 	if(no_matches) {
-		dc.DrawText("No matches for your search.", rect.GetX() + 40, rect.GetY() + 6);
+		dc.DrawText("No matches for your search.", rect.GetX() + 72, rect.GetY() + 6);
 	} else if(cleared) {
-		dc.DrawText("Please enter your search string.", rect.GetX() + 40, rect.GetY() + 6);
+		dc.DrawText("Please enter your search string.", rect.GetX() + 72, rect.GetY() + 6);
 	} else {
 		ASSERT(n < brushlist.size());
 		Sprite* spr = g_gui.gfx.getSprite(brushlist[n]->getLookID());
@@ -1187,7 +1187,7 @@ void FindDialogListBox::OnDrawItem(wxDC& dc, const wxRect& rect, size_t n) const
 			dc.SetTextForeground(wxColor(0x00, 0x00, 0x00));
 		}
 
-		dc.DrawText(wxstr(brushlist[n]->getName()), rect.GetX() + 40, rect.GetY() + 6);
+		dc.DrawText(wxstr(brushlist[n]->getName()), rect.GetX() + 72, rect.GetY() + 6);
 	}
 }
 
