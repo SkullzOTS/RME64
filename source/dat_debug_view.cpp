@@ -73,12 +73,12 @@ void DatDebugViewListBox::OnDrawItem(wxDC& dc, const wxRect& rect, size_t n) con
 		dc.SetTextForeground(wxColor(0x00, 0x00, 0x00));
 	}
 
-	dc.DrawText(wxString() << n, rect.GetX() + 40, rect.GetY() + 6);
+	dc.DrawText(wxString() << n, rect.GetX() + 72, rect.GetY() + 6);
 }
 
 wxCoord DatDebugViewListBox::OnMeasureItem(size_t n) const
 {
-	return 32;
+	return 64;
 }
 
 // ============================================================================
@@ -119,4 +119,3 @@ void DatDebugView::OnClickList(wxCommandEvent& evt)
 {
 	////
 }
-

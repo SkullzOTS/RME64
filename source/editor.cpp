@@ -825,7 +825,7 @@ void Editor::borderizeMap(bool showdialog)
 
 	uint64_t tiles_done = 0;
 	for(TileLocation* tileLocation : map) {
-		if(showdialog && tiles_done % 4096 == 0) {
+		if(showdialog && tiles_done % 16384 == 0) {
 			g_gui.SetLoadDone(static_cast<int32_t>(tiles_done / double(map.tilecount) * 100.0));
 		}
 
@@ -876,7 +876,7 @@ void Editor::randomizeMap(bool showdialog)
 
 	uint64_t tiles_done = 0;
 	for(TileLocation* tileLocation : map) {
-		if(showdialog && tiles_done % 4096 == 0) {
+		if(showdialog && tiles_done % 16384 == 0) {
 			g_gui.SetLoadDone(static_cast<int32_t>(tiles_done / double(map.tilecount) * 100.0));
 		}
 
@@ -947,7 +947,7 @@ void Editor::clearInvalidHouseTiles(bool showdialog)
 
 	uint64_t tiles_done = 0;
 	for(MapIterator map_iter = map.begin(); map_iter != map.end(); ++map_iter) {
-		if(showdialog && tiles_done % 4096 == 0) {
+		if(showdialog && tiles_done % 16384 == 0) {
 			g_gui.SetLoadDone(int(tiles_done / double(map.tilecount) * 100.0));
 		}
 
@@ -974,7 +974,7 @@ void Editor::clearModifiedTileState(bool showdialog)
 
 	uint64_t tiles_done = 0;
 	for(MapIterator map_iter = map.begin(); map_iter != map.end(); ++map_iter) {
-		if(showdialog && tiles_done % 4096 == 0) {
+		if(showdialog && tiles_done % 16384 == 0) {
 			g_gui.SetLoadDone(int(tiles_done / double(map.tilecount) * 100.0));
 		}
 
@@ -1908,4 +1908,3 @@ void Editor::SendNodeRequests()
 		live_client->sendNodeRequests();
 	}
 }
-

@@ -1045,7 +1045,7 @@ wxMemoryDC* GameSprite::getDC(SpriteSize size)
 
 		// Now comes the resizing / antialiasing
 		if(size == SPRITE_SIZE_16x16 || image.GetWidth() > SPRITE_PIXELS || image.GetHeight() > SPRITE_PIXELS) {
-			int new_size = SPRITE_SIZE_16x16 ? 16 : 32;
+			int new_size = SPRITE_SIZE_16x16 ? 16 : 64;
 			image.Rescale(new_size, new_size);
 		}
 
@@ -1059,8 +1059,8 @@ wxMemoryDC* GameSprite::getDC(SpriteSize size)
 
 void GameSprite::DrawTo(wxDC* dc, SpriteSize sz, int start_x, int start_y, int width, int height)
 {
-	if(width == -1)  width = sz == SPRITE_SIZE_32x32 ? 32 : 16;
-	if(height == -1) height= sz == SPRITE_SIZE_32x32 ? 32 : 16;
+	if(width == -1)  width = sz == SPRITE_SIZE_32x32 ? 64 : 16;
+	if(height == -1) height= sz == SPRITE_SIZE_32x32 ? 64 : 16;
 	wxDC* sdc = getDC(sz);
 	if(sdc) {
 		dc->Blit(start_x, start_y, width, height, sdc, 0, 0, wxCOPY, true);

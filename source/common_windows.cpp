@@ -903,7 +903,7 @@ void FindDialog::OnKeyDown(wxKeyEvent& event)
 
 	switch(event.GetKeyCode()) {
 		case WXK_PAGEUP:
-			amount = h / 32 + 1;
+			amount = h / 64 + 1;
 			[[fallthrough]];
 		case WXK_UP: {
 			if(item_list->GetItemCount() > 0) {
@@ -920,7 +920,7 @@ void FindDialog::OnKeyDown(wxKeyEvent& event)
 		}
 
 		case WXK_PAGEDOWN:
-			amount = h / 32 + 1;
+			amount = h / 64 + 1;
 			[[fallthrough]];
 		case WXK_DOWN: {
 			if(item_list->GetItemCount() > 0) {
@@ -1168,9 +1168,9 @@ Brush* FindDialogListBox::GetSelectedBrush()
 void FindDialogListBox::OnDrawItem(wxDC& dc, const wxRect& rect, size_t n) const
 {
 	if(no_matches) {
-		dc.DrawText("No matches for your search.", rect.GetX() + 40, rect.GetY() + 6);
+		dc.DrawText("No matches for your search.", rect.GetX() + 72, rect.GetY() + 6);
 	} else if(cleared) {
-		dc.DrawText("Please enter your search string.", rect.GetX() + 40, rect.GetY() + 6);
+		dc.DrawText("Please enter your search string.", rect.GetX() + 72, rect.GetY() + 6);
 	} else {
 		ASSERT(n < brushlist.size());
 		Sprite* spr = g_gui.gfx.getSprite(brushlist[n]->getLookID());
@@ -1187,13 +1187,13 @@ void FindDialogListBox::OnDrawItem(wxDC& dc, const wxRect& rect, size_t n) const
 			dc.SetTextForeground(wxColor(0x00, 0x00, 0x00));
 		}
 
-		dc.DrawText(wxstr(brushlist[n]->getName()), rect.GetX() + 40, rect.GetY() + 6);
+		dc.DrawText(wxstr(brushlist[n]->getName()), rect.GetX() + 72, rect.GetY() + 6);
 	}
 }
 
 wxCoord FindDialogListBox::OnMeasureItem(size_t n) const
 {
-	return 32;
+	return 64;
 }
 
 // ============================================================================
