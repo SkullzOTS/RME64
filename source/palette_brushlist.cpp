@@ -638,7 +638,7 @@ void BrushListBox::OnDrawItem(wxDC& dc, const wxRect& rect, size_t n) const
 	} else {
 		dc.SetTextForeground(wxColor(0x00, 0x00, 0x00));
 	}
-	dc.DrawText(wxstr(tileset->brushlist[n]->getName()), rect.GetX() + 40, rect.GetY() + 6);
+	dc.DrawText(wxstr(tileset->brushlist[n]->getName()), rect.GetX() + 72, rect.GetY() + 6);
 }
 
 wxCoord BrushListBox::OnMeasureItem(size_t n) const
