@@ -85,7 +85,7 @@ void BrowseTileListBox::OnDrawItem(wxDC& dc, const wxRect& rect, size_t n) const
 
 wxCoord BrowseTileListBox::OnMeasureItem(size_t n) const
 {
-	return 32;
+	return 64;
 }
 
 Item* BrowseTileListBox::GetSelectedItem()
@@ -219,4 +219,3 @@ void BrowseTileWindow::OnClickCancel(wxCommandEvent& WXUNUSED(event))
 {
 	EndModal(0);
 }
-
