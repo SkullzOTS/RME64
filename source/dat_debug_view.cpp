@@ -78,7 +78,7 @@ void DatDebugViewListBox::OnDrawItem(wxDC& dc, const wxRect& rect, size_t n) con
 
 wxCoord DatDebugViewListBox::OnMeasureItem(size_t n) const
 {
-	return 32;
+	return 64;
 }
 
 // ============================================================================
@@ -119,4 +119,3 @@ void DatDebugView::OnClickList(wxCommandEvent& evt)
 {
 	////
 }
-
